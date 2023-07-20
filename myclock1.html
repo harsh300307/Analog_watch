@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #clockContainer {
+            position: relative;
+            margin: auto;
+            height: 40vw;
+            width: 40vw;
+            background: url(myclock.jpg) no-repeat;
+            background-size: 100%;
+        }
+
+        #hour,
+        #minute,
+        #second {
+            position: absolute;
+            background: black;
+            border-radius: 10px;
+            transform-origin: bottom;
+        }
+
+        #hour {
+            width: 1.8%;
+            height: 25%;
+            top: 25%;
+            left: 48.85%;
+            opacity: 0.8;
+        }
+
+        #minute {
+            width: 1.6%;
+            height: 30%;
+            top: 19%;
+            left: 48.9%;
+            opacity: 0.8;
+        }
+
+        #second {
+            width: 1%;
+            height: 40%;
+            top: 9%;
+            left: 49.25%;
+            opacity: 0.8;
+        }
+    </style>
+    
+</head>
+
+<body>
+    <div id="clockContainer">
+        <div id="hour"></div>
+        <div id="minute"></div>
+        <div id="second"></div>
+    </div>
+
+    <script>
+        window.onload = () => {
+            setInterval(() => {
+                date = new Date();
+                ss = date.getSeconds();
+                mm = date.getMinutes();
+                hh = date.getHours();
+                h = (hh * 30) + (mm / 2);
+                second.style.transform = "rotate(" + ss * 6 + "deg)";
+                minute.style.transform = "rotate(" + mm * 6 + "deg)";
+                hour.style.transform = "rotate(" + h + "deg)";
+            }, 1000)
+        };
+    </script>
+</body>
+
+</html>     
